@@ -1,0 +1,24 @@
+#      _ ____              _     _
+#     | |  _ \ _   _ _ __ (_)___| |__
+#  _  | | |_) | | | | '_ \| / __| '_ \
+# | |_| |  __/| |_| | | | | \__ \ | | |
+#  \___/|_|    \__,_|_| |_|_|___/_| |_|
+#            Made by jiggey#4704
+
+
+# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+banItemOneName: 'Non-Malicious Hacks'
+banItemOneLore: 'Derp, SkinBlink, Twerk, Shift, etc.'
+
+# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+banItemTwoName: 'Malicious Hacks'
+banItemTwoLore: 'KillAura, AutoClicker, Aimbot, etc '
+
+# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+banItemThreeName: 'Ban Evasion'
+banItemThreeLore: 'Permanent Ban'
+
+# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+banItemFourName: 'Permanent Ban [Other]'
+banItemFourLore: 'For "Other" ban reasons.'
+

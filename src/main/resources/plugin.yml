@@ -1,0 +1,14 @@
+name: JPunish
+version: ${project.version}
+main: xyz.jiggey.JPunish
+api-version: 1.15
+prefix: -JPunish-
+load: STARTUP
+authors: [ jiggey, Rismose ]
+description: A Punishment Plugin For Minecraft With Full GUI And Customization Support
+website: crackingcord.xyz
+commands:
+  punish:
+    description: Opens up the punishment GUI.
+    usage: /<command>
+    permission: jpunish.gui.access
