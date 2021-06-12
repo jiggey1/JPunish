@@ -9,6 +9,7 @@ import xyz.jiggey.gui.mainGui;
 public final class JPunish extends JavaPlugin implements Listener {
     public Permission permission;
 
+    // Ban Config Strings
     public static String banItemOneName;
     public static String banItemTwoName;
     public static String banItemThreeName;
@@ -28,6 +29,18 @@ public final class JPunish extends JavaPlugin implements Listener {
     public static String banItemThree;
     public static String banItemFour;
 
+    // Kick Config Strings
+    public static String kickItemOneName;
+    public static String kickItemOneLore;
+    public static String kickItemTwoName;
+    public static String kickItemTwoLore;
+    public static String kickItemThreeName;
+    public static String kickItemThreeLore;
+
+    public static String kickItemOne;
+    public static String kickItemTwo;
+    public static String kickItemThree;
+
     public JPunish() {
         // GUI Permissions
         this.permission = new Permission("jpunish.gui.access"); // This permission is for GUI Access
@@ -35,10 +48,8 @@ public final class JPunish extends JavaPlugin implements Listener {
         this.permission = new Permission("jpunish.gui.kickUI"); // This permission is for Kick GUi Access
         this.permission = new Permission("jpunish.gui.muteUI"); // This permission is for Mute GUi Access
 
-        // Punishment Permissions
-        this.permission = new Permission("jpunish.punishment.ban"); // This permission grants access to banning players
-
         // Config File Shit
+        // Ban Menu Things
         banItemOneName = this.getConfig().getString("banItemOneName");
         banItemTwoName = this.getConfig().getString("banItemTwoName");
         banItemThreeName = this.getConfig().getString("banItemThreeName");
@@ -57,6 +68,18 @@ public final class JPunish extends JavaPlugin implements Listener {
         banItemTwo = this.getConfig().getString("banItemTwo");
         banItemThree = this.getConfig().getString("banItemThree");
         banItemFour = this.getConfig().getString("banItemFour");
+
+        // Kick Menu Things
+        kickItemOneName = this.getConfig().getString("kickItemOneName");
+        kickItemOneLore = this.getConfig().getString("kickItemOneLore");
+        kickItemTwoName = this.getConfig().getString("kickItemTwoName");
+        kickItemTwoLore = this.getConfig().getString("kickItemTwoLore");
+        kickItemThreeName = this.getConfig().getString("kickItemThreeName");
+        kickItemThreeLore = this.getConfig().getString("kickItemThreeLore");
+
+        kickItemOne = this.getConfig().getString("kickItemOne");
+        kickItemTwo = this.getConfig().getString("kickItemTwo");
+        kickItemThree = this.getConfig().getString("kickItemThree");
     }
 
     @Override
