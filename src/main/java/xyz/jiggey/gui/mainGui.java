@@ -40,13 +40,13 @@ public class mainGui implements Listener, CommandExecutor {
 
 
             // BanGui Items
-            GuiItem banItem1 = ItemBuilder.from(Material.GREEN_TERRACOTTA).setName(ChatColor.GREEN + JPunish.banItemOneName).setLore(ChatColor.GREEN + JPunish.banItemOneLore).asGuiItem();
+            GuiItem banItem1 = ItemBuilder.from(Material.getMaterial(JPunish.banItemOne)).setName(ChatColor.GREEN + JPunish.banItemOneName).setLore(ChatColor.GREEN + JPunish.banItemOneLore).asGuiItem();
 
-            GuiItem banItem2 = ItemBuilder.from(Material.YELLOW_TERRACOTTA).setName(ChatColor.YELLOW + JPunish.banItemTwoName).setLore(ChatColor.YELLOW + JPunish.banItemTwoLore).asGuiItem();
+            GuiItem banItem2 = ItemBuilder.from(Material.getMaterial(JPunish.banItemTwo)).setName(ChatColor.YELLOW + JPunish.banItemTwoName).setLore(ChatColor.YELLOW + JPunish.banItemTwoLore).asGuiItem();
 
-            GuiItem banItem3 = ItemBuilder.from(Material.ORANGE_TERRACOTTA).setName(ChatColor.GOLD + JPunish.banItemThreeName).setLore(ChatColor.GOLD + JPunish.banItemThreeLore).asGuiItem();
+            GuiItem banItem3 = ItemBuilder.from(Material.getMaterial(JPunish.banItemThree)).setName(ChatColor.GOLD + JPunish.banItemThreeName).setLore(ChatColor.GOLD + JPunish.banItemThreeLore).asGuiItem();
 
-            GuiItem banItem4 = ItemBuilder.from(Material.RED_TERRACOTTA).setName(ChatColor.RED + JPunish.banItemFourName).setLore(ChatColor.RED + JPunish.banItemFourLore).asGuiItem();
+            GuiItem banItem4 = ItemBuilder.from(Material.getMaterial(JPunish.banItemFour)).setName(ChatColor.RED + JPunish.banItemFourName).setLore(ChatColor.RED + JPunish.banItemFourLore).asGuiItem();
 
             // MainGUI Items
             GuiItem banItem = ItemBuilder.from(Material.BARRIER).setName(ChatColor.RED + "Ban Player").asGuiItem(event -> {
