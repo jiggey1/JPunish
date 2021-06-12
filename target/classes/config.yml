@@ -6,19 +6,24 @@
 #            Made by jiggey#4704
 
 
-# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+# This will set the lore of the first item on the BAN MENU. Example: "Non-Malicious Hacks"
 banItemOneName: 'Non-Malicious Hacks'
 banItemOneLore: 'Derp, SkinBlink, Twerk, Shift, etc.'
 
-# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+### This will set the lore of the second item on the BAN MENU.
 banItemTwoName: 'Malicious Hacks'
 banItemTwoLore: 'KillAura, AutoClicker, Aimbot, etc '
 
-# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+# This will set the lore of the third item on the BAN MENU.
 banItemThreeName: 'Ban Evasion'
 banItemThreeLore: 'Permanent Ban'
 
-# This will set the lore of the first item on the BAN MENU. Example: "Malicious Hacks"
+# This will set the lore of the fourth item on the BAN MENU.
 banItemFourName: 'Permanent Ban [Other]'
 banItemFourLore: 'For "Other" ban reasons.'
 
+# This Determines All Ban Lengths
+banLengthOne: '7d'
+banLengthTwo: '30d'
+banLengthThree: ''
+banLengthFour: ''

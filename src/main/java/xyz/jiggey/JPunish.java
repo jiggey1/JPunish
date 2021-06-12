@@ -41,7 +41,7 @@ public final class JPunish extends JavaPlugin implements Listener {
         banItemTwoLore= this.getConfig().getString("banItemTwoLore");
         banItemThreeLore = this.getConfig().getString("banItemThreeLore");
         banItemFourLore = this.getConfig().getString("banItemFourLore");
-        
+
         banLengthOne = this.getConfig().getString("banLengthOne");
         banLengthTwo = this.getConfig().getString("banLengthTwo");
         banLengthThree = this.getConfig().getString("banLengthThree");
@@ -50,8 +50,6 @@ public final class JPunish extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        this.getLogger().info("Loading and reading the config file...");
-        this.getLogger().info("Finished! Initializing...");
         this.getLogger().info("JPunish Has Been Enabled Successfully!");
         final PluginManager pluginManager = this.getServer().getPluginManager();
         pluginManager.addPermission(this.permission);

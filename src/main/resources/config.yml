@@ -9,7 +9,7 @@
 # This will set the lore of the first item on the BAN MENU. Example: "Non-Malicious Hacks"
 banItemOneName: 'Non-Malicious Hacks'
 banItemOneLore: 'Derp, SkinBlink, Twerk, Shift, etc.'
-a
+
 ### This will set the lore of the second item on the BAN MENU.
 banItemTwoName: 'Malicious Hacks'
 banItemTwoLore: 'KillAura, AutoClicker, Aimbot, etc '
