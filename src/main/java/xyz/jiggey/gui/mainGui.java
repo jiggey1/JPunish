@@ -33,6 +33,11 @@ public class mainGui implements Listener, CommandExecutor {
                 event.setCancelled(true);
             });
 
+            Gui muteGui = new Gui(3, ChatColor.LIGHT_PURPLE + "Choose Mute Reason");
+            kickGui.setDefaultClickAction(event -> {
+            event.setCancelled(true);
+            });
+
 
             // MainGUI Items
             GuiItem banItem = ItemBuilder.from(Material.BARRIER).setName(ChatColor.RED + "Ban Player").asGuiItem(event -> {
@@ -50,6 +55,24 @@ public class mainGui implements Listener, CommandExecutor {
                     kickGui.open(player);
                 } else {
                     player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.gui.kickUI ] to access the KickGUI!");
+                }
+            });
+
+            GuiItem muteItem = ItemBuilder.from(Material.PAPER).setName(ChatColor.GREEN + "Mute Player").asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                if(player.hasPermission("jpunish.gui.muteUI")) {
+                    muteGui.open(player);
+                } else {
+                    player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.gui.muteUI ] to access the MuteGUI!");
+                }
+            });
+
+            GuiItem freezeItem = ItemBuilder.from(Material.ICE).setName(ChatColor.GREEN + "Freeze Player").asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                if(player.hasPermission("jpunish.ability.freeze")) {
+                    mainGui.close(player);
+                } else {
+                    player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.gui.muteUI ] to access the MuteGUI!");
                 }
             });
 
@@ -82,9 +105,20 @@ public class mainGui implements Listener, CommandExecutor {
             GuiItem kickItem3 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemThree)).setName(ChatColor.RED + JPunish.kickItemThreeName).setLore(ChatColor.RED + JPunish.kickItemThreeLore).asGuiItem();
 
 
+            // MuteGUI Items
+            GuiItem muteItem1 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemOne)).setName(ChatColor.GREEN + JPunish.muteItemOneName).setLore(ChatColor.GREEN + JPunish.muteItemOneLore).asGuiItem();
+
+            GuiItem muteItem2 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemTwo)).setName(ChatColor.GOLD + JPunish.muteItemTwoName).setLore(ChatColor.GOLD + JPunish.muteItemTwoLore).asGuiItem();
+
+            GuiItem muteItem3 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemThree)).setName(ChatColor.RED + JPunish.muteItemThreeName).setLore(ChatColor.RED + JPunish.muteItemThreeLore).asGuiItem();
+
+
+
             // MainGUI Layout
             mainGui.setItem(2, 2, banItem);
             mainGui.setItem(2, 4, kickItem);
+            mainGui.setItem(2, 6, muteItem);
+            mainGui.setItem(2, 8, freezeItem);
             mainGui.setItem(3, 9, backItem);
 
             mainGui.getFiller().fill(ItemBuilder.from(Material.BLACK_STAINED_GLASS_PANE).setName("§ka").asGuiItem());
@@ -106,6 +140,12 @@ public class mainGui implements Listener, CommandExecutor {
             kickGui.setItem(3, 9, backItem2);
 
             kickGui.getFiller().fill(ItemBuilder.from(Material.GLASS_PANE).setName("§ka").asGuiItem());
+
+            // MuteGUI Layout
+            muteGui.setItem(2, 3, muteItem1);
+            muteGui.setItem(2, 5, muteItem2);
+            muteGui.setItem(2, 7, muteItem3);
+            muteGui.setItem(3, 9, backItem2);
 
 
         if (sender instanceof Player) {

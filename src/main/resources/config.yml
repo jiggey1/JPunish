@@ -67,3 +67,28 @@ kickItemThreeLore: 'KickLoreThree'
 kickItemOne: 'GREEN_TERRACOTTA'
 kickItemTwo: 'ORANGE_TERRACOTTA'
 kickItemThree: 'RED_TERRACOTTA'
+
+
+### THE NEXT SECTION IS FOR THE MUTE MENU!
+
+# This will set the name and lore of the first item on the MUTE MENU
+muteItemOneName: 'MuteReasonOne'
+muteItemOneLore: 'MuteLoreOne'
+
+
+# This will set the name and lore of the second item on the MUTE MENU
+muteItemTwoName: 'MuteReasonTwo'
+muteItemTwoLore: 'MuteLoreTwo'
+
+
+# This will set the name and lore of the third item on the MUTE MENU
+muteItemThreeName: 'MuteReasonThree'
+muteItemThreeLore: 'MuteLoreThree'
+
+
+# This sets the items for the Mute GUI! The default items are examples,
+# you can set this as ANY item name, just make sure its the actual name!
+# Examples: DIAMOND_SWORD, DIRT_BLOCK, DIAMOND_BLOCK, etc.
+muteItemOne: 'GREEN_TERRACOTTA'
+muteItemTwo: 'ORANGE_TERRACOTTA'
+muteItemThree: 'RED_TERRACOTTA'
