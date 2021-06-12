@@ -17,6 +17,10 @@ public final class JPunish extends JavaPlugin implements Listener {
     public static String banItemTwoLore;
     public static String banItemThreeLore;
     public static String banItemFourLore;
+    public static String banLengthOne;
+    public static String banLengthTwo;
+    public static String banLengthThree;
+    public static String banLengthFour;
 
     public JPunish() {
         // GUI Permissions
@@ -37,6 +41,11 @@ public final class JPunish extends JavaPlugin implements Listener {
         banItemTwoLore= this.getConfig().getString("banItemTwoLore");
         banItemThreeLore = this.getConfig().getString("banItemThreeLore");
         banItemFourLore = this.getConfig().getString("banItemFourLore");
+        
+        banLengthOne = this.getConfig().getString("banLengthOne");
+        banLengthTwo = this.getConfig().getString("banLengthTwo");
+        banLengthThree = this.getConfig().getString("banLengthThree");
+        banLengthFour = this.getConfig().getString("banLengthFour");
     }
 
     @Override
