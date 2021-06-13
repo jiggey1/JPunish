@@ -1,5 +1,5 @@
 # JPunish
-A Standalone Punishment Plugin Made For 1.15.2+ Minecraft using the MF-GUI's Framework!
+A Standalone Punishment Plugin Made For 1.15.2+ Minecraft using the MF-GUI Framework!
 
 ## How Does It Work?
 JPunish is a graphical way to punish a member on your server. This means it has a GUI to Ban, Kick, Mute or Freeze a member.
