@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import xyz.jiggey.JPunish;
 
-public class mainGui implements Listener, CommandExecutor {
+public class mainWorker implements Listener, CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -34,7 +34,7 @@ public class mainGui implements Listener, CommandExecutor {
             });
 
             Gui muteGui = new Gui(3, ChatColor.LIGHT_PURPLE + "Choose Mute Reason");
-            kickGui.setDefaultClickAction(event -> {
+            muteGui.setDefaultClickAction(event -> {
             event.setCancelled(true);
             });
 
@@ -67,12 +67,13 @@ public class mainGui implements Listener, CommandExecutor {
                 }
             });
 
-            GuiItem freezeItem = ItemBuilder.from(Material.ICE).setName(ChatColor.GREEN + "Freeze Player").asGuiItem(event -> {
+            GuiItem freezeItem = ItemBuilder.from(Material.ICE).setName(ChatColor.GREEN + "Coming Soon!").asGuiItem(event -> {
                 Player player = (Player) event.getWhoClicked();
                 if(player.hasPermission("jpunish.ability.freeze")) {
-                    mainGui.close(player);
+                   //mainGui.close(player);
+                    player.sendMessage(ChatColor.RED +  "This feature has not been added yet!");
                 } else {
-                    player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.gui.muteUI ] to access the MuteGUI!");
+                    player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.ability.freeze ] to freeze people!");
                 }
             });
 
@@ -83,13 +84,33 @@ public class mainGui implements Listener, CommandExecutor {
 
 
             // BanGui Items
-            GuiItem banItem1 = ItemBuilder.from(Material.getMaterial(JPunish.banItemOne)).setName(ChatColor.GREEN + JPunish.banItemOneName).setLore(ChatColor.GREEN + JPunish.banItemOneLore).asGuiItem();
+            GuiItem banItem1 = ItemBuilder.from(Material.getMaterial(JPunish.banItemOne)).setName(ChatColor.GREEN + JPunish.banItemOneName).setLore(ChatColor.GREEN + "" + ChatColor.ITALIC + JPunish.banItemOneLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("ban " + mentionedPlayer.getName() + " " + JPunish.banLengthOne + " " + JPunish.banItemOneName);
+                banGui.close(player);
+            });
 
-            GuiItem banItem2 = ItemBuilder.from(Material.getMaterial(JPunish.banItemTwo)).setName(ChatColor.YELLOW + JPunish.banItemTwoName).setLore(ChatColor.YELLOW + JPunish.banItemTwoLore).asGuiItem();
+            GuiItem banItem2 = ItemBuilder.from(Material.getMaterial(JPunish.banItemTwo)).setName(ChatColor.YELLOW + JPunish.banItemTwoName).setLore(ChatColor.YELLOW + "" + ChatColor.ITALIC + JPunish.banItemTwoLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getServer().getPlayer(args[0]);
+                player.performCommand("ban " + mentionedPlayer.getName() + " " + JPunish.banLengthTwo + " " + JPunish.banItemTwoName);
+                banGui.close(player);
+            });
 
-            GuiItem banItem3 = ItemBuilder.from(Material.getMaterial(JPunish.banItemThree)).setName(ChatColor.GOLD + JPunish.banItemThreeName).setLore(ChatColor.GOLD + JPunish.banItemThreeLore).asGuiItem();
+            GuiItem banItem3 = ItemBuilder.from(Material.getMaterial(JPunish.banItemThree)).setName(ChatColor.GOLD + JPunish.banItemThreeName).setLore(ChatColor.GOLD + "" + ChatColor.ITALIC + JPunish.banItemThreeLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("ban " + mentionedPlayer.getName() + " " + JPunish.banLengthThree + " " + JPunish.banItemThreeName);
+                banGui.close(player);
+            });
 
-            GuiItem banItem4 = ItemBuilder.from(Material.getMaterial(JPunish.banItemFour)).setName(ChatColor.RED + JPunish.banItemFourName).setLore(ChatColor.RED + JPunish.banItemFourLore).asGuiItem();
+            GuiItem banItem4 = ItemBuilder.from(Material.getMaterial(JPunish.banItemFour)).setName(ChatColor.RED + JPunish.banItemFourName).setLore(ChatColor.RED + "" + ChatColor.ITALIC + JPunish.banItemFourLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("ban " + mentionedPlayer.getName() + " " + JPunish.banLengthFour + " " + JPunish.banItemFourName);
+                banGui.close(player);
+            });
 
             GuiItem backItem2 = ItemBuilder.from(Material.OAK_DOOR).setName(ChatColor.GRAY + "Go Back").asGuiItem(event -> {
                 Player player = (Player) event.getWhoClicked();
@@ -98,19 +119,49 @@ public class mainGui implements Listener, CommandExecutor {
 
 
             // KickGUI Items
-            GuiItem kickItem1 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemOne)).setName(ChatColor.GREEN + JPunish.kickItemOneName).setLore(ChatColor.GREEN + JPunish.kickItemOneLore).asGuiItem();
+            GuiItem kickItem1 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemOne)).setName(ChatColor.GREEN + JPunish.kickItemOneName).setLore(ChatColor.GREEN + "" + ChatColor.ITALIC + JPunish.kickItemOneLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("kick " + mentionedPlayer.getName() + " " + JPunish.kickItemOneName);
+                kickGui.close(player);
+            });
 
-            GuiItem kickItem2 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemTwo)).setName(ChatColor.GOLD + JPunish.kickItemTwoName).setLore(ChatColor.GOLD + JPunish.kickItemTwoLore).asGuiItem();
+            GuiItem kickItem2 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemTwo)).setName(ChatColor.GOLD + JPunish.kickItemTwoName).setLore(ChatColor.GOLD + "" + ChatColor.ITALIC + JPunish.kickItemTwoLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("kick " + mentionedPlayer.getName() + " " + JPunish.kickItemTwoName);
+                kickGui.close(player);
+            });
 
-            GuiItem kickItem3 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemThree)).setName(ChatColor.RED + JPunish.kickItemThreeName).setLore(ChatColor.RED + JPunish.kickItemThreeLore).asGuiItem();
+            GuiItem kickItem3 = ItemBuilder.from(Material.getMaterial(JPunish.kickItemThree)).setName(ChatColor.RED + JPunish.kickItemThreeName).setLore(ChatColor.RED + "" + ChatColor.ITALIC + JPunish.kickItemThreeLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("kick " + mentionedPlayer.getName() + " " + JPunish.kickItemThreeName);
+                kickGui.close(player);
+            });
 
 
             // MuteGUI Items
-            GuiItem muteItem1 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemOne)).setName(ChatColor.GREEN + JPunish.muteItemOneName).setLore(ChatColor.GREEN + JPunish.muteItemOneLore).asGuiItem();
+            GuiItem muteItem1 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemOne)).setName(ChatColor.GREEN + JPunish.muteItemOneName).setLore(ChatColor.GREEN + "" + ChatColor.ITALIC + JPunish.muteItemOneLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("mute " + mentionedPlayer.getName() + " " + JPunish.muteLengthOne + " " + JPunish.muteItemOneName);
+                muteGui.close(player);
+            });
 
-            GuiItem muteItem2 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemTwo)).setName(ChatColor.GOLD + JPunish.muteItemTwoName).setLore(ChatColor.GOLD + JPunish.muteItemTwoLore).asGuiItem();
+            GuiItem muteItem2 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemTwo)).setName(ChatColor.GOLD + JPunish.muteItemTwoName).setLore(ChatColor.GOLD + "" + ChatColor.ITALIC + JPunish.muteItemTwoLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("mute " + mentionedPlayer.getName() + " " + JPunish.muteLengthTwo + " " + JPunish.muteItemTwoName);
+                muteGui.close(player);
+            });
 
-            GuiItem muteItem3 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemThree)).setName(ChatColor.RED + JPunish.muteItemThreeName).setLore(ChatColor.RED + JPunish.muteItemThreeLore).asGuiItem();
+            GuiItem muteItem3 = ItemBuilder.from(Material.getMaterial(JPunish.muteItemThree)).setName(ChatColor.RED + JPunish.muteItemThreeName).setLore(ChatColor.RED + "" + ChatColor.ITALIC + JPunish.muteItemThreeLore).asGuiItem(event -> {
+                Player player = (Player) event.getWhoClicked();
+                Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                player.performCommand("mute " + mentionedPlayer.getName() + " " + JPunish.muteLengthThree + " " + JPunish.muteItemThreeName);
+                muteGui.close(player);
+            });
 
 
 
@@ -146,6 +197,8 @@ public class mainGui implements Listener, CommandExecutor {
             muteGui.setItem(2, 5, muteItem2);
             muteGui.setItem(2, 7, muteItem3);
             muteGui.setItem(3, 9, backItem2);
+
+            muteGui.getFiller().fill(ItemBuilder.from(Material.GLASS_PANE).setName("§ka").asGuiItem());
 
 
         if (sender instanceof Player) {

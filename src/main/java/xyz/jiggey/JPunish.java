@@ -5,7 +5,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.jiggey.gui.mainGui;
+import xyz.jiggey.gui.mainWorker;
 
 public final class JPunish extends JavaPlugin implements Listener {
     public Permission permission;
@@ -55,6 +55,10 @@ public final class JPunish extends JavaPlugin implements Listener {
     public static String muteItemOne;
     public static String muteItemTwo;
     public static String muteItemThree;
+
+    public static String muteLengthOne;
+    public static String muteLengthTwo;
+    public static String muteLengthThree;
 
     public JPunish() {
         // GUI Permissions
@@ -109,6 +113,10 @@ public final class JPunish extends JavaPlugin implements Listener {
         muteItemOne = this.getConfig().getString("muteItemOne");
         muteItemTwo = this.getConfig().getString("muteItemTwo");
         muteItemThree = this.getConfig().getString("muteItemThree");
+
+        muteLengthOne = this.getConfig().getString("muteLengthOne");
+        muteLengthTwo = this.getConfig().getString("muteLengthTwo");
+        muteLengthThree = this.getConfig().getString("muteLengthThree");
     }
 
     @Override
@@ -118,7 +126,7 @@ public final class JPunish extends JavaPlugin implements Listener {
         pluginManager.addPermission(this.permission);
 
         // Commands Will Go Here
-        getCommand("punish").setExecutor((new mainGui()));
+        getCommand("punish").setExecutor((new mainWorker()));
 
         // Event Registering Will Go Here
         getServer().getPluginManager().registerEvents(this, this);

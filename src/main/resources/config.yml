@@ -28,7 +28,7 @@ banItemFourName: 'Permanent Ban [Other]'
 banItemFourLore: 'For "Other" ban reasons.'
 
 
-# This Determines All Ban Lengths
+# This Determines All Ban Lengths | If you don't have durations, leave them BLANK.
 banLengthOne: '7d'
 banLengthTwo: '30d'
 banLengthThree: ''
@@ -92,3 +92,9 @@ muteItemThreeLore: 'MuteLoreThree'
 muteItemOne: 'GREEN_TERRACOTTA'
 muteItemTwo: 'ORANGE_TERRACOTTA'
 muteItemThree: 'RED_TERRACOTTA'
+
+# This Determines All Mute Lengths | If you don't have durations, leave them BLANK.
+muteLengthOne: '7d'
+muteLengthTwo: '30d'
+muteLengthThree: ''
+muteLengthFour: ''
