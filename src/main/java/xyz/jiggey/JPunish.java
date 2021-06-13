@@ -1,13 +1,25 @@
 package xyz.jiggey;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.jiggey.gui.mainWorker;
+import xyz.jiggey.ris.FreezeCommand;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 
 public final class JPunish extends JavaPlugin implements Listener {
+
+    public HashMap<Player, Location> frozenPlayers = new HashMap<>(); // Making the HashMap for the frozen players
+
     public Permission permission;
 
     public static String prefix = "[JPunish] ";
@@ -126,7 +138,8 @@ public final class JPunish extends JavaPlugin implements Listener {
         pluginManager.addPermission(this.permission);
 
         // Commands Will Go Here
-        getCommand("punish").setExecutor((new mainWorker()));
+        Objects.requireNonNull(getCommand("punish")).setExecutor((new mainWorker()));
+        Objects.requireNonNull(getCommand("freeze")).setExecutor(new FreezeCommand(this));
 
         // Event Registering Will Go Here
         getServer().getPluginManager().registerEvents(this, this);
@@ -135,6 +148,19 @@ public final class JPunish extends JavaPlugin implements Listener {
         this.reloadConfig();
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+    }
+
+    // The Event-handler for freezing players
+    @EventHandler
+    public void onPlayerMoveBlock(PlayerMoveEvent event) {
+
+        if (!frozenPlayers.containsKey(event.getPlayer())) {
+            return;
+        }
+
+        if (event.getFrom().getBlockX() != Objects.requireNonNull(event.getTo()).getBlockX() || event.getFrom().getBlockZ() != event.getTo().getBlockZ()) {
+            event.getPlayer().teleport(frozenPlayers.get(event.getPlayer()));
+        }
     }
 
     @Override

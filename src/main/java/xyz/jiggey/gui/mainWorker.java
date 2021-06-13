@@ -14,6 +14,7 @@ import org.bukkit.event.Listener;
 import xyz.jiggey.JPunish;
 
 public class mainWorker implements Listener, CommandExecutor {
+    @SuppressWarnings("deprecation")
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
