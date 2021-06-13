@@ -7,8 +7,6 @@ JPunish is a graphical way to punish a member on your server. This means it has 
 JPunish is simply a faster way to ban, kick or mute someone. It simply brings up a GUI with custom reasons. When the item is selected,
 it runs the command. For example: If you select "Malicious Hacks" on the menu, it will run the command "/ban {player_name} {duration} {reason}".
 
-The reasons, item lore and the duration are completely custom! Just make your changes in the config.yml and reload using the built-in command! "/jpunish reload"
-
 ## What's the point?
 This plugin is primarily meant for bigger servers who have many players violating the same rules. Whether it be PVP Hacks, ban evading, spam, etc. This plugin
 makes it a lot easier *and faster* to ban for the same reasons!
