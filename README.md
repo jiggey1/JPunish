@@ -5,7 +5,7 @@ A Standalone Punishment Plugin Made For 1.15.2+ Minecraft using the MF-GUI Frame
 JPunish is a graphical way to punish a member on your server. This means it has a GUI to Ban, Kick, Mute or Freeze a member.
 
 JPunish is simply a faster way to ban, kick or mute someone. It simply brings up a GUI with custom reasons. When the item is selected,
-it runs the command. For example: If you select "Malicious Hacks" on the menu, it will run the command "/ban {player_name} {duration} {reason}".
+it runs the command. For example: If you select "Malicious Hacks" on the menu, it will run the command "/ban {player_name} {reason} {duration}".
 
 ## What's the point?
 This plugin is primarily meant for bigger servers who have many players violating the same rules. Whether it be PVP Hacks, ban evading, spam, etc. This plugin
