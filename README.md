@@ -21,3 +21,5 @@ Either way I cannot help unless you open a ticket and ask for my help!
 
 
 JPunish is a plugin made by [jiggey#4704](https://crackingcord.xyz)
+
+Speical thanks to [Rismose#0079](https://crackingcord.xyz/rismose) for some crappy freeze contributions.
