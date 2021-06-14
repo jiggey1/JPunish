@@ -22,7 +22,7 @@ public class FreezeCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (player.hasPermission("jpunish.gui.freeze")) {
+        if (player.hasPermission("jpunish.ability.freeze")) {
             if (args.length == 1) {
                 String targetName = args[0];
 
