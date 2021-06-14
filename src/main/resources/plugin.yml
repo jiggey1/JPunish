@@ -14,5 +14,5 @@ commands:
     permission: jpunish.gui.access
   freeze:
     description: Freezes a player
-    usage: : /<command>
+    usage: /<command>
     permission: jpunish.gui.freeze

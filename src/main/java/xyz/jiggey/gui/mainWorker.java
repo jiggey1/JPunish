@@ -68,11 +68,12 @@ public class mainWorker implements Listener, CommandExecutor {
                 }
             });
 
-            GuiItem freezeItem = ItemBuilder.from(Material.ICE).setName(ChatColor.GREEN + "Coming Soon!").asGuiItem(event -> {
+            GuiItem freezeItem = ItemBuilder.from(Material.ICE).setName(ChatColor.GREEN + "Freeze Player!").asGuiItem(event -> {
                 Player player = (Player) event.getWhoClicked();
                 if(player.hasPermission("jpunish.ability.freeze")) {
-                   //mainGui.close(player);
-                    player.sendMessage(ChatColor.RED +  "This feature has not been added yet!");
+                    Player mentionedPlayer = Bukkit.getPlayerExact(args[0]);
+                   mainGui.close(player);
+                    player.performCommand("freeze " + mentionedPlayer.getName());
                 } else {
                     player.sendMessage(ChatColor.RED + "You do not have permission [ jpunish.ability.freeze ] to freeze people!");
                 }

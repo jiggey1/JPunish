@@ -11,10 +11,12 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.jiggey.gui.mainWorker;
 import xyz.jiggey.ris.FreezeCommand;
+import xyz.jiggey.update.updateChecker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public final class JPunish extends JavaPlugin implements Listener {
 
@@ -148,6 +150,17 @@ public final class JPunish extends JavaPlugin implements Listener {
         this.reloadConfig();
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+
+        // Update Checker
+        Logger logger = this.getLogger();
+
+        new updateChecker(this, 93301).getVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                logger.info("You are running the latest version of JPunish!.");
+            } else {
+                logger.info("There is a new update for JPunish! Update now to get all the new fixes and features!");
+            }
+        });
     }
 
     // The Event-handler for freezing players

@@ -1,2 +1,4 @@
 xyz\jiggey\gui\mainWorker.class
 xyz\jiggey\JPunish.class
+xyz\jiggey\update\updateChecker.class
+xyz\jiggey\ris\FreezeCommand.class
